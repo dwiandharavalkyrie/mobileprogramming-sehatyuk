@@ -1,0 +1,1 @@
+ C:\\Users\\ASUS\ VIVOBOOK\\Documents\\sehatyuk\\sehatyuk\\.dart_tool\\flutter_build\\8a19aa5cdc47747af7231dca2cb33dfd\\native_assets.yaml: 
