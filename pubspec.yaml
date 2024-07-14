@@ -71,6 +71,10 @@ flutter:
     - images/dokter1.png
     - images/dokter2.png
     - images/dokter3.png
+    - images/creditcard.png
+    - images/gopay.png
+    - images/linkaja.png
+     - images/dokterlily.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
