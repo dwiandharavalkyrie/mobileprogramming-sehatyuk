@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: OnboardingPage(),
-    );
-  }
-}
-
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
 
@@ -56,7 +41,7 @@ class OnboardingPage extends StatelessWidget {
             const SizedBox(height: 50),
             ElevatedButton(
               onPressed: () {
-                // Add your onPressed code here!
+                Navigator.pushNamed(context, '/register');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -70,7 +55,7 @@ class OnboardingPage extends StatelessWidget {
             const SizedBox(height: 20), // Add some space between the buttons
             ElevatedButton(
               onPressed: () {
-                // Add your onPressed code here!
+                Navigator.pushNamed(context, '/login');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,

@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: LoginPage(),
-    );
-  }
-}
-
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -33,7 +18,7 @@ class LoginPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'images/logo.png', // Pastikan path file PNG benar
+                        'images/logo.png', // Ensure this path is correct
                         height: 100.0,
                       ),
                       const SizedBox(height: 10),
@@ -64,17 +49,16 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Add your onPressed code here!
+                  Navigator.pushNamed(context, '/main');
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      const Color(0xFF1D7ED1), // Warna utama yang diinginkan
+                  backgroundColor: const Color(0xFF1D7ED1),
                   foregroundColor: Colors.white,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   textStyle: const TextStyle(fontSize: 16),
                 ),
-                child: const Text('SIGN UP'),
+                child: const Text('LOG IN'),
               ),
               const SizedBox(height: 20),
               Row(
@@ -89,7 +73,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Add your onPressed code here!
+                      Navigator.pushNamed(context, '/register');
                     },
                     child: const Text(
                       'SIGN UP',
@@ -108,10 +92,11 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _buildTextField(
-      {required IconData icon,
-      required String hintText,
-      bool obscureText = false}) {
+  Widget _buildTextField({
+    required IconData icon,
+    required String hintText,
+    bool obscureText = false,
+  }) {
     return TextField(
       obscureText: obscureText,
       decoration: InputDecoration(

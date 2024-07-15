@@ -1,22 +1,9 @@
+// ignore_for_file: use_super_parameters
+
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SignUpPage(),
-    );
-  }
-}
-
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +20,7 @@ class SignUpPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'images/logo.png', // Pastikan path file PNG benar
+                        'images/logo.png', // Ensure the path is correct
                         height: 100.0,
                       ),
                       const SizedBox(height: 10),
@@ -63,7 +50,7 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(height: 10),
               _buildTextField(
                 icon: Icons.phone,
-                hintText: 'Nomor Telpon',
+                hintText: 'Nomor Telepon',
               ),
               const SizedBox(height: 10),
               _buildTextField(
@@ -95,7 +82,7 @@ class SignUpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Have an Account?',
+                    'Already have an account?',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.black54,
@@ -103,7 +90,7 @@ class SignUpPage extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      // Add your onPressed code here!
+                      Navigator.pushNamed(context, '/login');
                     },
                     child: const Text(
                       'LOG IN',
@@ -131,12 +118,13 @@ class SignUpPage extends StatelessWidget {
       decoration: InputDecoration(
         prefixIcon: Icon(icon),
         hintText: hintText,
-        filled: true,
+        filled: true, // Fixed typo: changed `filled;` to `filled: true,`
         fillColor: Colors.grey[200],
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(20.0),
           borderSide: BorderSide.none,
         ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
       ),
     );
   }

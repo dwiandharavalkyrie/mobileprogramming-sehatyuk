@@ -5,7 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
 }
 
 class ScheduleConsultationPage extends StatefulWidget {
-  const ScheduleConsultationPage({Key? key}) : super(key: key);
+  const ScheduleConsultationPage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ScheduleConsultationPageState createState() =>
       _ScheduleConsultationPageState();
 }
@@ -42,7 +43,7 @@ class _ScheduleConsultationPageState extends State<ScheduleConsultationPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Navigate back
+            Navigator.of(context).pop(); // Navigate back to previous screen
           },
         ),
       ),

@@ -1,32 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false, // Disable debug banner
-      home: HospitalRegistrationForm(),
-    );
-  }
-}
-
-class HospitalRegistrationForm extends StatefulWidget {
-  const HospitalRegistrationForm({super.key});
+class PendaftaranPage extends StatefulWidget {
+  const PendaftaranPage({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _HospitalRegistrationFormState createState() =>
-      _HospitalRegistrationFormState();
+  _PendaftaranPageState createState() => _PendaftaranPageState();
 }
 
-class _HospitalRegistrationFormState extends State<HospitalRegistrationForm> {
+class _PendaftaranPageState extends State<PendaftaranPage> {
   final _formKey = GlobalKey<FormState>();
   DateTime? _selectedDate;
   final TextEditingController _dateController = TextEditingController();
@@ -65,7 +48,7 @@ class _HospitalRegistrationFormState extends State<HospitalRegistrationForm> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Handle back button action
+            Navigator.pop(context);
           },
         ),
       ),
