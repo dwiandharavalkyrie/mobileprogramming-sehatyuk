@@ -26,7 +26,7 @@ class ChatRoom extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            // Handle back button press
+            Navigator.of(context).pop();
           },
         ),
         title: Row(
@@ -76,36 +76,6 @@ class ChatRoom extends StatelessWidget {
                   imageUrl:
                       'images/dokterlily.png', // Replace with actual image URL
                 ),
-                ChatMessage(
-                  message: 'Saya mengalami sakit kepala dan batuk.',
-                  isDoctor: false,
-                  imageUrl:
-                      'images/patient.png', // Replace with actual image URL
-                ),
-                ChatMessage(
-                  message: 'Sudah berapa lama sakit kepalanya?',
-                  isDoctor: true,
-                  imageUrl:
-                      'images/dokterlily.png', // Replace with actual image URL
-                ),
-                ChatMessage(
-                  message: 'Sejak kemarin sore.',
-                  isDoctor: false,
-                  imageUrl:
-                      'images/patient.png', // Replace with actual image URL
-                ),
-                ChatMessage(
-                  message: 'Apakah disertai dengan demam?',
-                  isDoctor: true,
-                  imageUrl:
-                      'images/dokterlily.png', // Replace with actual image URL
-                ),
-                ChatMessage(
-                  message: 'Tidak.',
-                  isDoctor: false,
-                  imageUrl:
-                      'images/patient.png', // Replace with actual image URL
-                ),
               ],
             ),
           ),
@@ -115,7 +85,7 @@ class ChatRoom extends StatelessWidget {
             child: Row(
               children: [
                 IconButton(
-                  icon: Icon(Icons.attach_file),
+                  icon: Icon(Icons.attach_file, color: Colors.grey),
                   onPressed: () {
                     // Handle attach file button press
                   },
@@ -129,12 +99,13 @@ class ChatRoom extends StatelessWidget {
                         borderSide: BorderSide.none,
                       ),
                       filled: true,
+                      fillColor: Colors.grey[200],
                       contentPadding: EdgeInsets.symmetric(horizontal: 16),
                     ),
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send),
+                  icon: Icon(Icons.send, color: Colors.grey),
                   onPressed: () {
                     // Handle send button press
                   },
@@ -159,25 +130,32 @@ class ChatMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment:
-          isDoctor ? MainAxisAlignment.start : MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         if (isDoctor) ...[
           CircleAvatar(
-            backgroundImage: AssetImage(imageUrl), //
-// Replace with actual image URL
+            backgroundImage: AssetImage(imageUrl),
           ),
           SizedBox(width: 8),
-        ],
-        Container(
-          margin: EdgeInsets.all(8),
-          padding: EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: isDoctor ? Colors.lightBlue[100] : Colors.grey[200],
-            borderRadius: BorderRadius.circular(20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Dr. Lily Luthfiah',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Container(
+                margin: EdgeInsets.all(8),
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.lightBlue[100],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(message),
+              ),
+            ],
           ),
-          child: Text(message),
-        ),
+        ],
       ],
     );
   }

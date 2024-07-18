@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sehatyuk/pages/mainchatdokterpage.dart';
-import 'package:sehatyuk/pages/pendaftaranpage.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);

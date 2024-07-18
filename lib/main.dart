@@ -3,8 +3,10 @@ import 'package:sehatyuk/pages/onboarding.dart';
 import 'package:sehatyuk/pages/registerpage.dart';
 import 'package:sehatyuk/pages/loginpage.dart';
 import 'package:sehatyuk/pages/mainpage.dart';
-import 'package:sehatyuk/pages/mainchatdokterpage.dart'; // Pastikan impor file mainchatdokterpage.dart dengan benar
+import 'package:sehatyuk/pages/mainchatdokterpage.dart'; // Ensure this path is correct
 import 'package:sehatyuk/pages/pendaftaranpage.dart';
+import 'package:sehatyuk/pages/checkout.dart';
+import 'package:sehatyuk/pages/roomchat.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +32,9 @@ class MyApp extends StatelessWidget {
             const PendaftaranPage(), // Pendaftaran route mapped to PendaftaranPage
         '/mainchatdokter': (context) =>
             const MainChatDokterPage(), // Route mapped to MainChatDokterPage
+        '/checkout': (context) =>
+            const ScheduleConsultationPage(), // Route to ScheduleConsultationPage
+        '/roomchat': (context) => ChatRoom(), // Route to ChatRoom
       },
     );
   }

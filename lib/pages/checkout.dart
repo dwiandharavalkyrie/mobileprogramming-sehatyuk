@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sehatyuk/pages/roomchat.dart'; // Update the path accordingly
 
 void main() {
   runApp(const MyApp());
@@ -75,7 +76,10 @@ class _ScheduleConsultationPageState extends State<ScheduleConsultationPage> {
                 alignment: Alignment.center,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Schedule consultation
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChatRoom()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,

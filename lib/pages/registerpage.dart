@@ -1,6 +1,7 @@
 // ignore_for_file: use_super_parameters
 
 import 'package:flutter/material.dart';
+import 'package:sehatyuk/pages/mainpage.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class RegisterPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'images/logo.png', // Ensure the path is correct
+                        'images/logo.png',
                         height: 100.0,
                       ),
                       const SizedBox(height: 10),
@@ -66,7 +67,10 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Add your onPressed code here!
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MainPage()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
